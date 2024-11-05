@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(ellipse at bottom, #0d0d17 0%, #000 80%);
+}
+
+.star-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff, #e6e6e6 70%, transparent);
+    opacity: 0.9;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+.drift-right { animation: drift-right 25s linear infinite; }
+.drift-left { animation: drift-left 25s linear infinite; }
+
+@keyframes drift-right {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(10vw); }
+}
+
+@keyframes drift-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-10vw); }
+}
+
